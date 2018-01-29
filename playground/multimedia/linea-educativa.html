@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Guardería Playground - Línea educativa</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="estilo.css" type="text/css" />
+</head>
+<body>
+	<header class="container clearfix">
+		<a class="logo float-sm-left row" href="index.html">
+			<div class="col-xs-5">
+				<img src="images/logo.svg" alt="Guardería Playground" />
+			</div>
+			<div class="col-xs-7 title">
+				<h5>Guardería</h5>
+				<h1>Playground</h1>
+			</div>
+		</a>
+		<div class="float-sm-right text-center">
+			<a class="btn btn-link" href="#" data-toggle="modal" data-target="#acceso">Acceso padres</a>
+			<a class="btn btn-primary" href="#" data-toggle="modal" data-target="#matricula">Matrícula</a>
+		</div>
+	</header>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav ml-auto mr-auto">
+					<li class="nav-item"><a class="nav-link" href="index.html" title="Inicio"><i class="icon-home"></i>Inicio</a></li>
+					<li class="nav-item"><a class="nav-link" href="quienes-somos.html" title="Quiénes somos"><i class="icon-teacher"></i>Quiénes somos</a></li>
+					<li class="nav-item"><a class="nav-link active" href="linea-educativa.html" title="Línea educativa"><i class="icon-blackboard"></i>Línea educativa</a></li>
+					<li class="nav-item"><a class="nav-link" href="actividades.html" title="Actividades"><i class="icon-pencil"></i>Actividades</a></li>
+					<li class="nav-item"><a class="nav-link" href="instalaciones.html" title="Instalaciones"><i class="icon-school"></i>Instalaciones</a></li>
+					<li class="nav-item"><a class="nav-link" href="contacto.html" title="Contacto"><i class="icon-email"></i>Contacto</a></li>
+				</ul>
+			</div>
+		</nav>
+		<h3 class="text-center" style="color:#9621e7;">Línea educativa</h3>
+		<div class="content">
+			<img src="images/bilingue.jpg" class="img-fluid" alt="Centro bilingue" />
+			<p><strong>Playground</strong> es una <strong>propuesta educativa bilingüe de excelencia</strong> (inglés – español) destinada a niños con edades de entre 0 y 6 años. Se trata de una opción educativa de excelencia, laica, dirigida a un público exigente, interesado en servicios educativos de alta calidad.</p>
+			<div class="text-center">
+				<br/>
+				<h4>Audio de presentación:</h4>
+				<br/>
+				<audio controls autoplay>
+					<source src="presentacion.mp3" type="audio/mpeg">
+					Tu navegador no soporta los elementos de audio.
+				</audio>
+			</div>
+			<br/><br/>
+			<p>En nuestro centro ofrecemos una pedagogía interactiva en la que el niño es el verdadero protagonista de su aprendizaje, teniendo  en cuenta las diferentes facetas de la personalidad infantil, su diversidad, sus motivaciones, gustos, intereses y necesidades, a la hora de definir nuestra programación.</p>
+			<p>Pretendemos desarrollar todas las capacidades cognitivas e intelectuales, motoras, emocionales, afectivas y de relación interpersonal de nuestros niños. Fomentamos hábitos de orden y de higiene que aumenten su autoestima y autonomía personal.</p>
+			<p>Apostamos por la calidad de la enseñanza y por el desarrollo profesional de su equipo.</p>
+			<img src="images/heart.png" class="img-fluid" alt="Idiomas" />
+			<p>La organización de la actividad diaria queda recogida en un horario de rutinas que ofrece un clima de confianza y seguridad en los niños, planificada siempre en función de la atención y cuidado de sus necesidades básicas: alimentación, sueño-descanso, higiene, juego…y por otra parte, según los ciclos de máxima capacidad de atención y actividad, así como su estado en el área socio-emocional.</p>
+			<p>Presentamos los contenidos a través de unidades didácticas o centros de interés que promuevan principios como el aprendizaje significativo, la globalidad, la experimentación, la observación, la afectividad, la imitación, la seguridad, la actividad lúdica e interactiva, partiendo de la propia experiencia, desarrollo y conocimientos previos de los niños.</p>
+		</div>
+	</div>
+	<footer class="container-fluid">
+		<p class="text-center">© 2017 Guardería Playground S.L. Todos los derechos reservados.</p>
+	</footer>
+	<div class="modal fade" id="acceso">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Acceso padres</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<div class="container">
+						<div class="form-group">
+							<label class="control-label" for="email">E-mail:</span></label>
+							<input type="text" class="form-control" name="email" id="email" required />
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="password">Contraseña:</span></label>
+							<input type="text" class="form-control" name="password" id="password" required />
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<input type="button" class="btn btn-primary btn-block" value="Acceder" />
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="matricula">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Matrícula</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<div class="container">
+						<div class="form-group">
+							<label class="control-label" for="nombre">Nombre:</span></label>
+							<input type="text" class="form-control" name="nombre" id="nombre" required />
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="apellidos">Apellidos:</span></label>
+							<input type="text" class="form-control" name="apellidos" id="apellidos" required />
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="edad">Edad:</span></label>
+							<input type="text" class="form-control" name="edad" id="edad" required />
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="tutor">Tutor:</span></label>
+							<input type="text" class="form-control" name="tutor" id="tutor" required />
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="telefono">Teléfono:</span></label>
+							<input type="text" class="form-control" name="telefono" id="telefono" required />
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="direccion">Dirección:</span></label>
+							<input type="text" class="form-control" name="direccion" id="direccion" required />
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<input type="button" class="btn btn-primary btn-block" value="Enviar" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+</body>
+</html>

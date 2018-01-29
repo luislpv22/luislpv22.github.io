@@ -1,0 +1,273 @@
+$menuColor: #ff7500, #1f982e, #9621e7, #ed0000, #953400, #859093;
+$textShadowColor: #64abc8;
+$menuIconColor: #fff;
+$mainColor: #ff3f62;
+$bgColor1: #75b9cd;
+$icons: home "\f105", teacher "\f104", blackboard "\f103", pencil "\f102", school "\f101", email "\f100";
+
+@mixin font-face ($title, $src) {
+  @font-face {
+    font-family: $title;
+    src: url($src);
+  }
+}
+@include font-face('Poiret One', 'fonts/PoiretOne-Regular.ttf');
+@include font-face('Raleway', 'fonts/Raleway-Regular.ttf');
+@include font-face('Flaticon', 'fonts/Flaticon.ttf');
+
+@mixin keyframes($title) {
+  @-webkit-keyframes #{$title} {
+    @content;
+  }
+  @-moz-keyframes #{$title} {
+    @content;
+  }
+  @-o-keyframes #{$title} {
+    @content;
+  }
+  @keyframes #{$title} {
+    @content;
+  }
+}
+
+@mixin transition($params) {
+  -webkit-transition: $params;
+  -moz-transition: $params;
+  -o-transition: $params;
+  transition: $params;  
+}
+
+@mixin transform($params) {
+  -webkit-transform: $params;
+  -moz-transform: $params;
+  -ms-transform: $params;
+  -o-transform: $params;
+  transform: $params;
+}
+
+@each $name, $value in $icons {
+  .icon-#{$name}:before {
+    content: $value;
+  }
+}
+
+@include keyframes(balloon) {
+  @for $i from 1 to 10 {
+    $p: $i*10;
+
+    #{$p}%, #{$p+10}% {
+      @if $i % 2 == 0 { @include transform(rotateZ(5deg)); }
+      @else { @include transform(rotateZ(-5deg)); }
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poiret One';
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid #ddd;
+  margin: 30px 0;
+}
+
+.inner {
+  width: 100%;
+}
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.center {
+  text-align: center;
+}
+
+header {
+  background: #fff;
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  > .inner {
+    padding: 20px 0;
+  }
+  .logo {
+    float: left;
+    width: 260px;
+    padding: 10px;
+    > img {
+      height: 60px;
+      float: left;
+      position: relative;
+      @include transition(top 1s);
+      top: 0;
+    }
+    &:hover > img {
+      animation: balloons 1s;
+      top: -120px;
+    }
+    > .title {
+      float: left;
+      color: #2c2c2c;
+      margin-left: 15px;
+      margin-top: 5px;
+      h1, h5 {
+        margin: 0;
+      }
+    }
+  }
+  .right {
+    float: right;
+    margin-top: 40px;
+    a {
+      margin-right: 20px;
+    }
+    .acceso {
+      color: #000;
+    }
+  }
+}
+
+nav {
+  width: 100%;
+  ul {
+    display: block;
+    margin: 0;
+    padding: 0 10px;
+    background: $bgColor1;
+  }
+  li {
+    list-style: none;
+    a {
+      color: #fff;
+      font-weight: bold;
+      line-height: 50px;
+      padding: 6px 15px;
+      text-shadow: 1px 1px 3px $textShadowColor;
+      &:hover {
+        text-shadow: none;
+      }
+    }
+    @for $i from 1 to 6 {
+      &:nth-child(#{$i}) a {
+        &:hover, &.active {
+          color: nth($menuColor, $i);
+        }
+      }
+    }
+  }
+  a > i:before {
+    font-family: 'Flaticon';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: normal;
+    margin-right: 6px;
+    color: $menuIconColor;
+    text-shadow: 1px 1px 3px $textShadowColor;
+  }
+}
+
+.btn {
+  background: $mainColor;
+  color: #fff;
+  padding: 8px 12px;
+  font-weight: bold;
+  border: 0;
+  cursor: pointer;
+}
+
+#main {
+  padding: 30px;
+  font-family: 'Raleway';
+  img {
+    width: 100%;
+    height: auto;
+  }
+  h3.page-title {
+    font-family: 'Poiret One';
+    color: $mainColor;
+    text-align: center;
+    font-size: 24px;
+    margin-top: 10px;
+  }
+  h4 {
+    color: $mainColor;
+  }
+  ul li {
+    margin-bottom: 15px;
+  }
+}
+
+#contacto {
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  input[type="text"], textarea {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin: 3px 0 20px;
+  }
+}
+
+footer {
+  background: $bgColor1;
+  text-align: center;
+  font-family: 'Raleway';
+  color: #fff;
+  > .inner {
+    padding: 30px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .inner {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  nav {
+    > .inner {
+      background: url(images/pencils.jpg) left top no-repeat;
+      background-size: cover;
+      background-position: 0 -200px;
+      text-align: center;
+      padding: 10px 0;
+      &.expanded {
+        height: 400px;
+      }
+    }
+    ul {
+      height: 50px;
+      background: transparent;
+      padding: 0;
+    }
+    li {
+      display: inline;
+      a {
+        font-size: 15px;
+      }
+    }
+  }
+}

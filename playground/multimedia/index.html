@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Guardería Playground - Inicio</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="estilo.css" type="text/css" />
+</head>
+<body class="index">
+	<header class="container clearfix">
+		<a class="logo float-sm-left row" href="index.html">
+			<div class="col-xs-5">
+				<img src="images/logo.svg" alt="Guardería Playground" />
+			</div>
+			<div class="col-xs-7 title">
+				<h5>Guardería</h5>
+				<h1>Playground</h1>
+			</div>
+		</a>
+		<div class="float-sm-right text-center">
+			<a class="btn btn-link" href="#" data-toggle="modal" data-target="#acceso">Acceso padres</a>
+			<a class="btn btn-primary" href="#" data-toggle="modal" data-target="#matricula">Matrícula</a>
+		</div>
+	</header>
+	<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav ml-auto mr-auto">
+					<li class="nav-item"><a class="nav-link" href="index.html" title="Inicio"><i class="icon-home"></i>Inicio</a></li>
+					<li class="nav-item"><a class="nav-link" href="quienes-somos.html" title="Quiénes somos"><i class="icon-teacher"></i>Quiénes somos</a></li>
+					<li class="nav-item"><a class="nav-link" href="linea-educativa.html" title="Línea educativa"><i class="icon-blackboard"></i>Línea educativa</a></li>
+					<li class="nav-item"><a class="nav-link" href="actividades.html" title="Actividades"><i class="icon-pencil"></i>Actividades</a></li>
+					<li class="nav-item"><a class="nav-link" href="instalaciones.html" title="Instalaciones"><i class="icon-school"></i>Instalaciones</a></li>
+					<li class="nav-item"><a class="nav-link" href="contacto.html" title="Contacto"><i class="icon-email"></i>Contacto</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="jumbotron text-center">
+			<h2>¡Bienvenido a Guardería Playground!</h2>
+			<p>En nuestra guardería sus niños recibirán la atención de profesionales especializados en el cuidado infantil.</p>
+			<p>Contacte con nosotros.</p>
+			<br/>
+			<a href="contacto.html" title="Contáctanos" class="btn btn-primary">Contáctanos</a>
+		</div>
+		<div class="content">
+			<p>Las guarderías han dejado de ser los lugares dónde las familias dejaban a sus hijos durante un periodo de tiempo. Ahora estos centros educativos se han convertido en la <strong>primera experiencia educativa</strong> de los más pequeños, así como una parte fundamental en el <strong>crecimiento físico y social</strong> del niño.</p>
+			<p>En Playground hemos creado un espacio para los niños dónde no sólo se cubren las necesidades básicas de los más pequeños, como puede ser la alimentación, la higiene o el descanso, sino que además, se les estimula tanto a nivel físico como psíquico para lograr un desarrollo integral. Hemos preparado cada centro para conseguir un espacio de esparcimiento lúdico e intelectual donde los niños experimenten, curioseen, busquen experiencias y se sientan seguros y queridos.</p>
+			<p>Una de las diferencias con otros centros es que Playground planifica una serie de actividades educativas de distintas índoles dirigidas a los más pequeños para potenciar el desarrollo global de los niños. Con estas actividades, trabajan los hábitos cotidianos, aprenden el lenguaje, conocen su cuerpo y aprenden a relacionarse entre ellos, exploran el entorno, se inician en las matemáticas y entrenan su aparato psicomotriz. Además, también realizan actividades más clásicas como música, plástica, excursiones al exterior para que conozcan el entorno y disfruten de la naturaleza, o jueguen libremente a lo que más les apetezca.</p>
+		</div>
+	</div>
+	<footer class="container-fluid">
+		<p class="text-center">© 2017 Guardería Playground S.L. Todos los derechos reservados.</p>
+	</footer>
+	<div class="modal fade" id="acceso">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Acceso padres</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<div class="container">
+						<div class="form-group">
+							<label class="control-label" for="email">E-mail:</span></label>
+							<input type="text" class="form-control" name="email" id="email" required />
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="password">Contraseña:</span></label>
+							<input type="text" class="form-control" name="password" id="password" required />
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<input type="button" class="btn btn-primary btn-block" value="Acceder" />
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="matricula">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Matrícula</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<div class="container">
+						<div class="form-group">
+							<label class="control-label" for="nombre">Nombre:</span></label>
+							<input type="text" class="form-control" name="nombre" id="nombre" required />
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="apellidos">Apellidos:</span></label>
+							<input type="text" class="form-control" name="apellidos" id="apellidos" required />
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="edad">Edad:</span></label>
+							<input type="text" class="form-control" name="edad" id="edad" required />
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="tutor">Tutor:</span></label>
+							<input type="text" class="form-control" name="tutor" id="tutor" required />
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="telefono">Teléfono:</span></label>
+							<input type="text" class="form-control" name="telefono" id="telefono" required />
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="direccion">Dirección:</span></label>
+							<input type="text" class="form-control" name="direccion" id="direccion" required />
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<input type="button" class="btn btn-primary btn-block" value="Enviar" />
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+</body>
+</html>

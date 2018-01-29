@@ -1,0 +1,205 @@
+@font-face {
+	font-family: 'Poiret One';
+	src: url('fonts/PoiretOne-Regular.ttf');
+}
+@font-face {
+	font-family: 'Raleway';
+	src: url("fonts/Raleway-Regular.ttf");
+}
+@font-face {
+	font-family: 'Flaticon';
+	src: url("fonts/Flaticon.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.icon-home:before { content: "\f105"; }
+.icon-teacher:before { content: "\f104"; }
+.icon-blackboard:before { content: "\f103"; }
+.icon-pencil:before { content: "\f102"; }
+.icon-school:before { content: "\f101"; }
+.icon-email:before { content: "\f100"; }
+
+@keyframes balloons {
+	10%, 20% {
+		transform: rotateZ(-5deg);
+	}
+	20%, 30% {
+		transform: rotateZ(5deg);
+	}
+	30%, 40% {
+		transform: rotateZ(-5deg);
+	}
+	40%, 50% {
+		transform: rotateZ(5deg);
+	}
+	50%, 60% {
+		transform: rotateZ(-5deg);
+	}
+	60%, 70% {
+		transform: rotateZ(5deg);
+	}
+	70%, 80% {
+		transform: rotateZ(-5deg);
+	}
+	80%, 90% {
+		transform: rotateZ(5deg);
+	}
+	30%, 40% {
+		transform: rotateZ(-5deg);
+	}
+	90%, 100% {
+		transform: rotateZ(5deg);
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+html, body {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: 'Poiret One';
+	font-size: 14px;
+}
+a {
+	font-weight: bold;
+	color: #ff3f62;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+header {
+	padding: 20px;
+}
+header .logo {
+	padding: 10px;
+	margin-left: 10px;
+}
+header .logo:hover {
+	text-decoration: none;
+}
+header .logo img {
+	height: 60px;
+	position: relative;
+	transition: top 1s;
+	top: 0;
+}
+header .logo:hover img {
+	animation: balloons 1s;
+	top: -120px;
+}
+header a,
+header a:hover {
+	color: #2c2c2c;
+}
+header .logo .title {
+	margin-top: 10px;
+	margin-left: 15px;
+	font-weight: bold;
+}
+header .logo .title h1 {
+	font-size: 26px;
+	margin: 0;
+}
+header .logo .title h5 {
+	font-size: 16px;
+	margin: 0;
+}
+header .float-sm-right {
+	margin-top: 40px;
+}
+header .float-sm-right a {
+	margin-right: 20px;
+}
+nav.navbar {
+	background: #75b9cd;
+	margin-bottom: 30px;
+	padding: 0;
+}
+nav.navbar .navbar-toggler {
+	width: 100%;
+}
+nav.navbar .navbar-nav .nav-link {
+	color: #fff;
+	font-weight: bold;
+	line-height: 50px;
+	padding: 6px 25px;
+	text-shadow: 1px 1px 3px #64abc8;
+}
+nav li a:hover {
+	text-shadow: none;
+}
+nav.navbar li:nth-child(1) .nav-link:hover, nav.navbar li:nth-child(1) .nav-link.active { color: #ff7500; }
+nav.navbar li:nth-child(2) .nav-link:hover, nav.navbar li:nth-child(2) .nav-link.active { color: #1f982e; }
+nav.navbar li:nth-child(3) .nav-link:hover, nav.navbar li:nth-child(3) .nav-link.active { color: #9621e7; }
+nav.navbar li:nth-child(4) .nav-link:hover, nav.navbar li:nth-child(4) .nav-link.active { color: #ed0000; }
+nav.navbar li:nth-child(5) .nav-link:hover, nav.navbar li:nth-child(5) .nav-link.active { color: #953400; }
+nav.navbar li:nth-child(6) .nav-link:hover, nav.navbar li:nth-child(6) .nav-link.active { color: #859093; }
+nav a > i:before {
+	font-family: 'Flaticon';
+	font-size: 20px;
+	font-style: normal;
+	font-weight: normal;
+	margin-right: 6px;
+	color: #fff;
+	text-shadow: 1px 1px 3px #64abc8;
+}
+.btn {
+	font-weight: bold;
+	border: 0;
+}
+.btn-primary {
+	background: #ff3f62;
+}
+.btn-link {
+	color: #000;
+}
+.content,
+.jumbotron p {
+	font-family: 'Raleway';
+}
+.content > img,
+.content > picture > img {
+	margin: 20px 0 30px;
+}
+.content h4 {
+	font-weight: bold;
+	color: #ff3f62;
+	font-size: 16px;
+}
+footer {
+	background: #75b9cd;
+	font-family: 'Raleway';
+	color: #fff;
+	padding: 30px 0;
+	margin-top: 35px;
+}
+.jumbotron h2 {
+	font-weight: bold;
+}
+
+nav > .navbar-collapse:hover {
+	background-position: left -120px;
+}
+
+@media (min-width: 1024px) {
+	nav > .navbar-collapse {
+		background: url(images/pencils.jpg) left top no-repeat;
+		background-size: cover;
+		background-position: 0 -200px;
+		text-align: center;
+		transition: all .3s;
+	}
+	.index nav > .navbar-collapse {
+		height: 400px;
+		align-items: flex-start;
+		justify-content: center;
+		padding: 10px 0;
+	}
+	nav.navbar .navbar-nav .nav-link {
+		padding: 6px 15px;
+	}
+}
