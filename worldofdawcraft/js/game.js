@@ -13,6 +13,7 @@ updateTimer();
 $('#score span').text(score);
 $('#deaths span').text(deaths);
 $('#btnStart').click(start);
+$('#endMenu #btnStart').click(function() { location.reload(); });
 $(player).hide();
 
 var game = $("#area").arrowEngine($('#player'),
