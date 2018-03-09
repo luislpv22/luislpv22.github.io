@@ -1,0 +1,455 @@
+﻿html, body
+{
+  width: 100%;
+  height: 100%;
+}
+body {
+  color: #444;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#area {
+  background: url(../images/bg2.jpg) no-repeat #000 left top;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 0;
+  cursor: url(../images/cursor/normal.png), auto;
+  overflow: hidden;
+}
+
+#area.level1 { background-image: url(../images/bg1.jpg); }
+#area.level2 { background-image: url(../images/bg2.jpg); }
+#area.level3 { background-image: url(../images/bg3.jpg); }
+#area.level4 { background-image: url(../images/bg4.jpg); }
+
+.level1 #capa1 { background-image: url(../images/capa1.png); }
+.level2 #capa1 { background-image: url(../images/capa2.png); }
+.level3 #capa1 { background-image: url(../images/capa3.png); }
+.level4 #capa1 { background-image: url(../images/capa4.png); }
+
+
+#scoreboard {
+  position: absolute;
+  background: url(../images/timer.png);
+  width: 198px;
+  height: 67px;
+  top: 25px;
+  right: 25px;
+  z-index: 100;
+  opacity: 0.9;
+  user-select: none;
+}
+
+#timer {
+  position: absolute;
+  top: 30px;
+  left: 22px;
+  color: #fff;
+  font-size: 18px;
+  text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 2px 2px #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+}
+
+#level {
+  position: absolute;
+  top: 12px;
+  left: 23px;
+  color: #d0c15c;
+  letter-spacing: 0.5px;
+  font-size: 11px;
+  text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;;
+}
+
+#score {
+  position: absolute;
+  top: 32px;
+  right: 50px;
+  color: #fff;
+  font-size: 11px;
+}
+#score img {
+  vertical-align: text-top;
+  margin-right: 3px;
+}
+
+#deaths {
+  position: absolute;
+  top: 32px;
+  right: 22px;
+  color: #fff;
+  font-size: 11px;
+}
+#deaths img {
+  vertical-align: text-top;
+  position: relative;
+  top: -1px;
+  margin-right: 3px;
+}
+
+#time-bar.ui-progressbar {
+  position: absolute;
+  background: transparent;
+  bottom: 8px;
+  left: 15px;
+  width: 168px;
+  border: 0;
+  border-radius: 1px;
+  height: 9px;
+  overflow: hidden;
+}
+#time-bar.ui-progressbar .ui-progressbar-value {
+  background: url(../images/progress.jpg) repeat-x;
+  width: 100%;
+  background-size: contain;
+  height: 100%;
+  border: 0;
+  transition: width 1s linear;
+}
+
+.flex-container 
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.flex-container > div
+{
+  flex-shrink: 0;
+}
+
+#startMenu, #endMenu {
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+}
+#logo {
+  background: url(../images/logo.png) no-repeat;
+  background-size: contain;
+  width: 350px;
+  height: 175px;
+  margin-bottom: 50px;
+}
+#btnStart {
+  background: url(../images/btn.jpg) left top no-repeat;
+  width: 140px;
+  color: #fff;
+  font-size: 22px;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  letter-spacing: 2px;
+  border-radius: 3px;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.8);
+  box-shadow: 0 0 20px 3px rgba(0,0,0,0.5);
+  transition: all .2s;
+  user-select: none;
+  margin-bottom: 15vh;
+}
+#btnStart:hover {
+  background-image: url(../images/btn-hover.jpg);
+}
+
+#endMenu {
+  color: #fff;
+}
+#endMenu #logo {
+  margin-bottom: 0;
+}
+#endMenu #btnStart {
+  font-size: 16px;
+  margin: 25px 0;
+}
+#endMenu a {
+  color: #b12818;
+}
+#btnGithub a {
+  display: block;
+  background: url(../images/github.png) 5px center no-repeat #fff;
+  background-size: contain;
+  padding: 10px 20px 10px 45px;
+  box-sizing: border-box;
+  color: #000;
+  text-decoration: none;
+  border-radius: 3px;
+  box-shadow: 0 0 20px 3px rgba(0,0,0,0.5);
+  margin-bottom: 15vh;
+}
+
+.hidden {
+  display: none;
+}
+
+.npc {
+  background: url(../images/peon.png) -205px 0px;
+  position: absolute;
+  top: 19vw;
+  left: 46vw;
+  width: 40px;
+  height: 50px;
+  cursor: url(../images/cursor/attack.png), auto;
+}
+
+.npc .target {
+  position: absolute;
+  width: 50px;
+  height: 20px;
+  bottom: 3px;
+  left: -5px;
+  background: rgba(255, 0, 0, 0.3);
+  border-radius: 50%;
+  z-index: -1;
+}
+.npc.dead {
+  background: url(../images/peon.png) -205px -600px;
+  cursor: url(../images/cursor/normal.png), auto;
+}
+.npc.lootable {
+  cursor: url(../images/cursor/loot.png), auto;
+}
+.npc.lootable:before {
+  content: "";
+  position: absolute;
+  display: block;
+  background: url(../images/sparkle.gif) no-repeat;
+  background-size: 200%;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.npc.dead .target {
+  background: rgba(50, 50, 50, 0.3);
+}
+
+.npc.peon { background-image: url(../images/peon.png); }
+.npc.orc { background-image: url(../images/orc.png); background-position: -240px 0; width: 60px; height: 60px; }
+.npc.orc.dead { background-position: -240px -720px; }
+.npc.grunt { background-image: url(../images/grunt.png); background-position: -240px 0; width: 60px; height: 60px; }
+.npc.deathknight { background-image: url(../images/deathknight.png); background-position: -240px 0; width: 60px; height: 60px; }
+
+.health-bar.ui-progressbar {
+  position: absolute;
+  background: transparent;
+  top: 0px;
+  width: 40px;
+  height: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 0;
+  z-index: 5;
+}
+.health-bar.ui-progressbar .ui-progressbar-value {
+  background: rgba(4, 130, 2, 0.8);
+  width: 100%;
+  padding-left: 1px;
+  height: 4px;
+  border: 0;
+}
+
+.cast-bar {
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  top: 6px;
+  width: 40px;
+  height: 2px;
+  z-index: 5;
+}
+.cast-bar .progress {
+  background: rgba(24, 166, 234, 0.8);
+  width: 0;
+  height: 2px;
+}
+
+.damage {
+  position: absolute;
+  top: 20px;
+  font-size: 12px;
+  color: yellow;
+  text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  z-index: 10;
+}
+
+.range {
+  position: absolute;
+  border: 1px solid blue;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.loot-ui {
+  max-height: 244px;
+}
+.loot-items {
+  position: absolute;
+  border: 0;
+  min-height: 244px;
+}
+.loot-items.ui-dialog-content {
+  padding: 0 21px;
+  margin-top: 43px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.loot-ui.ui-widget {
+  position: absolute;
+  background: url(../images/loot-ui.png);
+  cursor: url(../images/cursor/normal.png), auto;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+}
+.loot-ui .ui-dialog-titlebar-close {
+  cursor: url(../images/cursor/normal.png), auto;
+  opacity: 0;
+}
+.loot-ui .ui-dialog-titlebar {
+  background: transparent;
+  cursor: url(../images/cursor/normal.png), auto;
+  border: 0;
+}
+.loot-items .item {
+  width: 143px;
+  height: 37px;
+  margin-bottom: 2px;
+}
+.loot-items .icon { 
+  float: left;
+  background-size: contain;
+  width: 37px;
+  height: 37px;
+  border-radius: 5px;
+}
+.loot-items .icon:before {
+  content: "";
+  display: block;
+  background: url(../images/item-border.png);
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+}
+.loot-items .icon:hover {
+  box-shadow: inset 4px 4px 2px rgba(200,200,200,0.9), inset -4px -5px 2px rgba(200,200,200,0.6);
+}
+.loot-items .item .text {
+  float: left;
+  width: 101px;
+  margin-left: 3px;
+  box-sizing: border-box;
+  height: 37px;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  color: #fff;
+  font-size: 12px;
+  box-shadow: inset 0px 4px 5px 1px rgba(0, 0, 0, 0.5), inset 1px 0px 1px 0px rgba(200, 200, 200, 0.5);
+  border-radius: 3px;
+  user-select: none;
+  overflow: hidden;
+  position: relative;
+}
+
+#capa1 {
+  background: url(../images/capa1.png) top left no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 90;
+  pointer-events: none;
+}
+
+.collision {
+  position: absolute;
+  text-align: center;
+  font-size: 50px;
+  width: 60px;
+  height: 60px;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+#player {
+  position: absolute;
+  background: url(../images/mage.png) -9px 0px;
+  width: 40px;
+  height: 56px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+#player .damage {
+  color: red;
+}
+
+.spell {
+  background: url(../images/spell.png) 0 0;
+  position: absolute;
+  width: 20px;
+  height: 70px;
+}
+
+p {
+  margin: 5px 0;
+}
+
+.alert
+{
+  display: none;
+  background: url(../images/alert.png);
+  position: absolute;
+  top: 20vh;
+  width: 380px;
+  height: 82px;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+  z-index: 9999;
+}
+.alert p {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.btn {
+  background: #720000;
+  box-sizing: border-box;
+  width: 130px;
+  height: 25px;
+  font-size: 14px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  box-shadow: inset -1px -1px 1px #000000, inset 1px 1px 1px #5b5b5b;
+  margin: 0 auto;
+  color: #ffd207;
+  padding: 3px 10px;
+  text-shadow: 2px 2px 1px #000;
+  user-select: none;
+}
+.btn:active {
+  box-shadow: inset 1px 1px 1px #000000, inset -1px -1px 1px #5b5b5b;
+}
+
+.floatingMsg {
+  display: none;
+  position: absolute;
+  top: 17vh;
+  width: 380px;
+  height: 100px;
+  text-align: center;
+  z-index: 9999;
+  color: red;
+  font-size: 14px;
+  text-shadow: 1px 1px 0px #000, 2px 2px 5px rgba(0, 0, 0, 0.3);
+  margin-bottom: 50px;
+}
